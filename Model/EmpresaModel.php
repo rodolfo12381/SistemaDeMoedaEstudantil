@@ -1,0 +1,53 @@
+<?php require_once 'C:/programas_php/htdocs/workspace/lab03/config/config.php';
+
+class EmpresaModel {
+
+    public static function update ($con,$data)
+    {
+        $sql = "UPDATE tbempresa SET ($data= $data) WHERE  condition = $data";
+        $result = mysqli_query($con,$sql);
+        if(!$result){
+            echo 'Erro ao atualizar Empresa';
+            die();
+        }
+    }
+
+    public static function insert ($con,$data)
+    {
+        $sql = "INSERT INTO tbempresa (nome)
+        VALUES ('{$data['nome']}');";
+        $result = mysqli_query($con,$sql);
+        if(!$result) {
+        echo 'Erro ao cadastrar Empresa';
+        die();
+}
+    }
+
+    public static function delete ($con,$data)
+    {
+        $sql = "DELETE FROM tbempresa WHERE id = $data";
+            $result = mysqli_query($con,$sql);
+            if(!$result){
+                echo 'Erro ao deletar Empresa';
+                die();
+            }
+    }
+
+    public static function selectAll ($con)
+    {
+        $sql = "SELECT * FROM tbempresa";
+        $result = mysqli_query($con,$sql);
+        if(!$result){
+            echo 'Erro ao buscar Empresa';
+            die();
+        }
+        $arrayEmpresas = array();
+        while ($row = $result->fetch_assoc()){
+            $arrayEmpresas [] = $row;
+        }
+        return $arrayEmpresas;
+    }
+    
+}
+
+?>
