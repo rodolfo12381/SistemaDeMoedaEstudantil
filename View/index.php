@@ -20,6 +20,9 @@
         <li class="nav-item">
             <a class="nav-link  tex-dark" href="cadastro/cadastro.php">Cadastro</a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link  tex-dark" href="painel/painel.php">Painel</a>
+        </li>
     </ul>
   </div>
 </nav>

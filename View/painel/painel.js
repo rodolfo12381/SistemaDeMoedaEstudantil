@@ -36,6 +36,7 @@ $(".deletar").click(function(){
             method: 'POST'
         }).done(function(result){
             $("#tabela").html(result);
+            
         });
     })
 

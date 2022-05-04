@@ -6,8 +6,13 @@ require_once '../../Controller/AlunoController.php';
 
 if(isset($_POST['data']) && !empty($_POST['data'])){
     
-    AlunoController::criarAluno($con,$_POST['data']);
-
+    try{
+        AlunoController::criarAluno($con,$_POST['data']);
+    }catch (Exception $e) {
+        echo 'Exceção capturada: ',  $e->getMessage(), "\n";
+    }finally{
+        header('Location: ../index.php');
+    }
 }
 
 
