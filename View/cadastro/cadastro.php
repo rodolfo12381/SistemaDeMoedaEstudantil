@@ -22,7 +22,7 @@ $arrayCursos = CursoController::listarCursos($con);
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link tex-dark" href="../index.php">Home</a>
+                <a class="nav-link tex-dark" href="../home.php">Home</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link  tex-dark" href="../login/login.php">Login</a>

@@ -9,6 +9,22 @@ class VantagensController extends VantagensModel {
     {
        return parent::insert($con,$data);   
     }
+    public static function adicionarVantagem($con,$data)
+    {
+       return parent::insert($con,$data);   
+    }
+    public static function listarVantagemPorId($con,$data)
+    {
+       return parent::selectById($con,$data);
+    }
+    public static function excluirProduto($con,$data) 
+    {
+       return parent::delete($con,$data);
+    }
+    public static function editarVantagem($con,$data)
+    {
+       return parent::update($con,$data);
+    }
 }
 
 ?>

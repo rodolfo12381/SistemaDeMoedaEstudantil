@@ -17,8 +17,8 @@ require_once 'C:/programas_php/htdocs/workspace/lab03/config/config.php';
         public static function insert ($con,$data) 
         {
             
-            $sql = "INSERT INTO tbprofessor (nome,senha,instituicao,curso,cpf)
-                    VALUES ('{$data['nome']}','{$data['senha']}','{$data['instituicao']}',
+            $sql = "INSERT INTO tbprofessor (nome,email,senha,instituicao,curso,cpf)
+                    VALUES ('{$data['nome']}','{$data['email']}','{$data['senha']}','{$data['instituicao']}',
                     '{$data['curso']}','{$data['cpf']}');";
             $result = mysqli_query($con,$sql);
             if(!$result) {

@@ -6,12 +6,16 @@ require_once 'C:/programas_php/htdocs/workspace/lab03/config/config.php';
 
         public static function update($con,$data)
         {
-            $sql = "UPDATE tbusuario SET ($data= $data) WHERE  condition = $data";
+            
+            $sql = "UPDATE tbusuario SET email = '{$data['email']}',nome = '{$data['nome']}',senha = '{$data['senha']}',rg = '{$data['rg']}',
+            endereco = '{$data['endereco']}', instituicao = '{$data['instituicao']}',curso = '{$data['curso']}',cpf = '{$data['cpf']}'         
+            WHERE id = {$data['id']}";
             $result = mysqli_query($con,$sql);
             if(!$result){
                 echo 'Erro ao atualizar Aluno';
                 die();
             }
+            print_r($sql);
         }
 
         public static function insert ($con,$data) 
@@ -51,7 +55,5 @@ require_once 'C:/programas_php/htdocs/workspace/lab03/config/config.php';
             }
             return $arrayAlunos;
         }
-
     }
-
 ?>

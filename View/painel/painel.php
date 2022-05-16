@@ -1,6 +1,11 @@
+<?php
+require_once ('../../config/config.php');
+if(!isset($_SESSION['usuario']) && empty($_SESSION['usuario'])){
+    header('Location: ../login/login.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,13 +20,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item-active">
-                    <a class="nav-link text-dark" href="#">Home</a>
+                    <a class="nav-link text-dark" href="../home.php">Home</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link tex-dark" href="login/login.php">Perfil</a>
-                </li>
+                </li> -->
                 <li class="nav-item">
-                    <a class="nav-link  tex-dark" href="cadastro/cadastro.php">Logout</a>
+                    <a class="nav-link  tex-dark" href="../login/logout.php">Logout</a>
                 </li>
             </ul>
         </div>

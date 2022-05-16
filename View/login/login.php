@@ -12,7 +12,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link tex-dark" href="../index.php">Home</a>
+            <a class="nav-link tex-dark active" href="#">Login</a>
           </li>
           <li class="nav-item">
             <a class="nav-link  tex-dark" href="../cadastro/cadastro.php">Cadastro</a>
@@ -26,14 +26,14 @@
         <h1>Login</h1>
         </div>
         <div class="card-body">
-          <form action="login.php" method="POST">
+          <form action="action.php" method="POST">
             <div class="form-row pt-4"> 
               <label for="email" class="col-4">Email:</label>
-              <input type="email" class="form-control col-8" name="email" id="email">
+              <input type="email" class="form-control col-8" name="email" id="email" >
             </div>
             <div class="form-row pt-4">
               <label for="senha"  class="col-4">Senha:</label>
-              <input type="password" class="form-control col-8" name="senha" id="senha">
+              <input type="password" class="form-control col-8" name="senha" id="senha" >
             </div>
             <div class="form-row d-flex justify-content-center pt-3">
               <button class="btn btn-primary">Login</button>

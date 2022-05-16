@@ -15,6 +15,15 @@ class CursoModel {
         }
         return $arrayCursos;
     }
+
+    public static function selectById ($data,$con)
+    {
+        $sql = "SELECT * FROM tbcurso WHERE id = {$data}";
+        $result = mysqli_query($con,$sql);
+        $row = mysqli_fetch_row($result);
+        $curso = $row;
+        return $curso;
+    }
 }
 
 

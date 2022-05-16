@@ -4,7 +4,9 @@ class VantagensModel {
 
     public static function update ($con,$data)
     {
-        $sql = "UPDATE tbvantagem SET ($data= $data) WHERE  condition = $data";
+    
+        $sql = "UPDATE tbvantagem SET nome = '{$data['nome']}', descricao = '{$data['descricao']}', custo = '{$data['custo']}',
+        foto = '{$data['imagem']}', fk_empresa = '{$data['id']}' WHERE  id = {$data['id_vantagem']}";
         $result = mysqli_query($con,$sql);
         if(!$result){
             echo 'Erro ao atualizar Vantagem';
@@ -14,8 +16,9 @@ class VantagensModel {
 
     public static function insert ($con,$data)
     {
-        $sql = "INSERT INTO tbvantagem (nome,descricao,custo,foto)
-        VALUES ('{$data['nome']}','{$data['descricao']}','{$data['custo']}','{$data['foto']}');";
+        print_r($data);
+        $sql = "INSERT INTO tbvantagem (nome,descricao,custo,foto,fk_empresa)
+        VALUES ('{$data['nome']}','{$data['descricao']}','{$data['custo']}','{$data['imagem']}',{$data['id']});";
         $result = mysqli_query($con,$sql);
         if(!$result) {
             echo 'Erro ao cadastrar Vantagem';
@@ -25,7 +28,7 @@ class VantagensModel {
 
     public static function delete ($con,$data)
     {
-        $sql = "DELETE FROM tbvantagem WHERE condition = $data";
+        $sql = "DELETE FROM tbvantagem WHERE id = $data";
             $result = mysqli_query($con,$sql);
             if(!$result){
                 echo 'Erro ao deletar Vantagem';
@@ -41,6 +44,16 @@ class VantagensModel {
             echo 'Erro ao buscar Vantagem';
             die();
         }
+    }
+    public static function selectById ($con,$data)
+    {
+        $sql = "SELECT * FROM tbvantagem WHERE fk_empresa = $data";
+        $result = mysqli_query($con,$sql);
+        $arrayVantagens= array();
+        while ($row = $result->fetch_assoc()){
+            $arrayVantagens [] = $row;
+        }
+        return $arrayVantagens;
     }
 }
 

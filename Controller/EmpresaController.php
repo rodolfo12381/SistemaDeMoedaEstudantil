@@ -17,6 +17,10 @@ class EmpresaController extends EmpresaModel {
     {
         return parent::delete($con,$data);
     }
+    public static function alterarEmpresa($con,$data)
+    {
+        return parent::update($con,$data);
+    }
 }
 
 ?>

@@ -42,6 +42,4 @@ $(".deletar").click(function(){
 
 });
 
-
-
 });

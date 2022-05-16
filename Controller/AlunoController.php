@@ -17,6 +17,10 @@ class AlunoController extends AlunoModel {
     {
         return parent::delete($con,$data);
     }
+    public static function alterarAluno($con,$data)
+    {
+        return parent::update($con,$data);
+    }
 }
 
 ?>

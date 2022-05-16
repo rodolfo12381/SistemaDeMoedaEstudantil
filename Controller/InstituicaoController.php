@@ -9,7 +9,10 @@ class InstituicaoController extends InstituicaoModel {
     {
         return parent::selectAll($con);
     }
-
+    public static function buscarPorId($data,$con)
+    {
+        return parent::selectById($data,$con);
+    }
 }
 
 

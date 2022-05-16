@@ -15,6 +15,15 @@ class InstituicaoModel {
         }
         return $arrayInstituicoes;
     }
+    public static function selectById ($data,$con)
+    {
+        
+        $sql = "SELECT * FROM tbinstituicao WHERE id = $data";
+        $result = mysqli_query($con,$sql);
+        $row = mysqli_fetch_row($result);
+        $instituicao = $row;
+        return $instituicao;
+    }
 }
 
 

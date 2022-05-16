@@ -4,7 +4,7 @@ class EmpresaModel {
 
     public static function update ($con,$data)
     {
-        $sql = "UPDATE tbempresa SET ($data= $data) WHERE  condition = $data";
+        $sql = "UPDATE tbempresa SET nome = '{$data['nome']}' WHERE id = {$data['id']}";
         $result = mysqli_query($con,$sql);
         if(!$result){
             echo 'Erro ao atualizar Empresa';
