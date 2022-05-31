@@ -11,4 +11,6 @@ if ($con->connect_errno) {
   exit();
 }
 
+define('BASE_DIR_PAINEL', __DIR__.'/cms');
+
 ?>

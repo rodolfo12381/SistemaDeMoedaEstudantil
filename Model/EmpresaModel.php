@@ -4,7 +4,8 @@ class EmpresaModel {
 
     public static function update ($con,$data)
     {
-        $sql = "UPDATE tbempresa SET nome = '{$data['nome']}' WHERE id = {$data['id']}";
+        $sql = "UPDATE tbempresa SET nome = '{$data['nome']}', email = '{$data['email']}', senha = '{$data['senha']}', 
+        cnpj = '{$data['cnpj']}' WHERE id = {$data['id']}";
         $result = mysqli_query($con,$sql);
         if(!$result){
             echo 'Erro ao atualizar Empresa';
@@ -14,8 +15,8 @@ class EmpresaModel {
 
     public static function insert ($con,$data)
     {
-        $sql = "INSERT INTO tbempresa (nome)
-        VALUES ('{$data['nome']}');";
+        $sql = "INSERT INTO tbempresa (nome,email,senha,cnpj)
+        VALUES ('{$data['nome']}','{$data['email']}','{$data['senha']}','{$data['cnpj']}');";
         $result = mysqli_query($con,$sql);
         if(!$result) {
         echo 'Erro ao cadastrar Empresa';

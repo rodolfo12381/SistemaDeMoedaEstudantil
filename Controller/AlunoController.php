@@ -21,6 +21,10 @@ class AlunoController extends AlunoModel {
     {
         return parent::update($con,$data);
     }
+    public static function buscaAluno($con,$data)
+    {
+        return parent::selectById($con,$data);
+    }
 }
 
 ?>

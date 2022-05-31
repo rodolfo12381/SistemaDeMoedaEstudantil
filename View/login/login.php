@@ -1,3 +1,8 @@
+<?php
+  if(!isset($_POST['usuarioTipo']) || empty($_POST['usuarioTipo'])){
+    header('Location: ../index.php');
+  }
+?>
 <!doctype html>
 <html lang="pt-br">
   <head>
@@ -23,7 +28,7 @@
     <div class="container d-flex justify-content-center">
       <div class="card col-6 d-flex justify-content-center mt-5">
         <div class="card-header d-flex justify-content-center">
-        <h1>Login</h1>
+        <h1>Login <?php echo $_POST['usuarioTipo'];?></h1>
         </div>
         <div class="card-body">
           <form action="action.php" method="POST">
@@ -35,6 +40,7 @@
               <label for="senha"  class="col-4">Senha:</label>
               <input type="password" class="form-control col-8" name="senha" id="senha" >
             </div>
+            <input type="hidden" name="usuarioTipo" value="<?php echo $_POST['usuarioTipo'];?>">
             <div class="form-row d-flex justify-content-center pt-3">
               <button class="btn btn-primary">Login</button>
             </div>

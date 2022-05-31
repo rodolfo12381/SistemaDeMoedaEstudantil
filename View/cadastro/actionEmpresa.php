@@ -26,6 +26,11 @@ if(isset($_POST['atualiza']) && !empty($_POST['atualiza'])){
 if(isset($_POST['produto']) && !empty($_POST['produto'])){
 
     try{
+        $img = VantagensController::validaImagem($_FILES['imagem']);
+        if (!($img == false)) {
+            $img = VantagensController::uploadImagem($_FILES['imagem']);
+            $_POST['produto']['foto'] = $img;
+        }
         VantagensController::adicionarVantagem($con,$_POST['produto']);
     }catch (Exception $e) {
         echo 'Exceção capturada: ',  $e->getMessage(), "\n";
@@ -36,6 +41,11 @@ if(isset($_POST['produto']) && !empty($_POST['produto'])){
 if(isset($_POST['produtoEditar']['atualiza']) && !empty($_POST['produtoEditar']['atualiza'])){
 
     try{
+        $img = VantagensController::validaImagem($_FILES['imagemAtualiza']);
+        if (!($img == false)) {
+            $img = VantagensController::uploadImagem($_FILES['imagemAtualiza']);
+            $_POST['produtoEditar']['atualiza']['foto'] = $img;
+        }
         VantagensController::editarVantagem($con,$_POST['produtoEditar']['atualiza']);
     }catch (Exception $e) {
         echo 'Exceção capturada: ',  $e->getMessage(), "\n";

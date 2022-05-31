@@ -14,10 +14,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link tex-dark active" href="#">Login</a>
+                    <a class="nav-link tex-dark active" href="#">Logo</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link  tex-dark" href="../cadastro/cadastro.php">Cadastro</a>
+                    <a class="nav-link  tex-dark" href="cadastro/cadastro.php">Cadastro</a>
                 </li>
             </ul>
         </div>
@@ -35,8 +35,10 @@
                         </div>
                         <select class="custom-select" id="inputGroupSelect01" name="usuarioTipo">
                             <option selected>--SELECIONE--</option>
-                            <option value="aluno">Aluno</option>
-                            <option value="professor">Professor</option>
+                            <option value="Admin">Admin</option>
+                            <option value="Aluno">Aluno</option>
+                            <option value="Empresa">Empresa</option>
+                            <option value="Professor">Professor</option>
                         </select>
                     </div>
                     <div class="form-row d-flex justify-content-center pt-3">

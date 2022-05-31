@@ -6,7 +6,7 @@ class VantagensModel {
     {
     
         $sql = "UPDATE tbvantagem SET nome = '{$data['nome']}', descricao = '{$data['descricao']}', custo = '{$data['custo']}',
-        foto = '{$data['imagem']}', fk_empresa = '{$data['id']}' WHERE  id = {$data['id_vantagem']}";
+        foto = '{$data['foto']}', fk_empresa = '{$data['id']}' WHERE  id = {$data['id_vantagem']}";
         $result = mysqli_query($con,$sql);
         if(!$result){
             echo 'Erro ao atualizar Vantagem';
@@ -16,9 +16,8 @@ class VantagensModel {
 
     public static function insert ($con,$data)
     {
-        print_r($data);
         $sql = "INSERT INTO tbvantagem (nome,descricao,custo,foto,fk_empresa)
-        VALUES ('{$data['nome']}','{$data['descricao']}','{$data['custo']}','{$data['imagem']}',{$data['id']});";
+        VALUES ('{$data['nome']}','{$data['descricao']}','{$data['custo']}','{$data['foto']}',{$data['id']});";
         $result = mysqli_query($con,$sql);
         if(!$result) {
             echo 'Erro ao cadastrar Vantagem';

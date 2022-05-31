@@ -22,6 +22,9 @@ switch ($_POST['acao']) {
     case 'empresa':
         echo require_once 'gerenciarEmpresa.php';
         break;
+    case 'vantagem':
+        echo require_once 'gerenciarVantagem.php';
+        break;
     case 'professor':
         echo require_once 'gerenciarProfessor.php';
         break;
